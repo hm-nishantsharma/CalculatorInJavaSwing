@@ -1,6 +1,6 @@
-// Date: 4th January 2024
-// Implementing Swing by creating a Calculator App
+// Implementing Java Swing by creating a Calculator App
 // Known Exceptions Handled manually using loops
+
 
 
 //header files
@@ -10,9 +10,6 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.*;
-
-// Using javax.swing to create a basic calculator and perform various mathematical operations.
-
 
 
 class Calculator extends JFrame implements ActionListener {
@@ -53,6 +50,8 @@ class Calculator extends JFrame implements ActionListener {
         //Components of the Calculator starts
 
         //Dynamic Memory Allocated using new Keyword
+
+        //Changing appearance/design of the buttons
         t1 = new JTextField(inp);
         t1.setBackground(Color.black);
         t1.setForeground(Color.white);
@@ -212,14 +211,6 @@ class Calculator extends JFrame implements ActionListener {
         l2.setHorizontalAlignment(SwingConstants.CENTER);
 
 
-//        b19 = new JButton("Check");
-//        b19.setToolTipText("Check values assigned to num1 and num2");
-//        b19.addActionListener(this);
-//        b19.setBackground(Color.blue);
-//        b19.setForeground(Color.white);
-//        b19.setOpaque(true);
-//        b19.setFont(new Font("Dialog", Font.BOLD, 20));
-
 
         //Add to Frame
         f.add(t1);
@@ -250,13 +241,6 @@ class Calculator extends JFrame implements ActionListener {
         */
         f.setVisible(true);
         f.setTitle("My Calculator");
-
-        /*
-            Moves and resizes this component. The new location of the top-left corner is
-            specified by x and y, and the new size is specified by width and height.
-            This method changes layout-related information, and therefore,
-            invalidates the component hierarchy.
-        */
         f.setBounds(100, 100, 600, 500);
 
         /*
@@ -265,23 +249,11 @@ class Calculator extends JFrame implements ActionListener {
             Components are enabled initially by default.
         */
         f.setEnabled(true);
-
-        /*
-            To close the JFrame  by clicking on the X button. JFrame.setDefaultCloseOperations(int)
-            is a method provided by JFrame class.
-
-            Various parameters that determines the actions performed by this method:
-            "0" -> JFrame will never close even after clicking on X button
-            JFrame.EXIT_ON_CLOSE -> exits application and releases the used memory
-            JFrame.HIDE_ON_CLOSE -> hides the JFrame. It doesn't exit the application.
-            JFrame.DISPOSE_ON_CLOSE  -> turns the frame off but doesn't close the program. It also consumes memory.
-            JFrame.DO_NOTHING_ON_CLOSE -> does nothing when user clicks on X button
-
-        */
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
     }
 
+    //to add functionality to the buttons of this Calculator app
     public void actionPerformed(ActionEvent ae) {
         inp = t1.getText();
         // Backspace Button
@@ -425,7 +397,6 @@ class Calculator extends JFrame implements ActionListener {
                     for (int i = oprAt + 1; i < size; i++) {
                         second[j++] = out[i];
                     }
-                    //n2 = Arrays.toString(second);
                     StringBuilder sb = new StringBuilder();
                     for (int i = 0; i < second.length; i++) {
                         sb.append(second[i]);
@@ -441,8 +412,6 @@ class Calculator extends JFrame implements ActionListener {
                 }
                 n1 = sb.toString();
 
-
-                // n1 = Arrays.toString(first);
 
                 num1 = Integer.parseInt(n1);
 
@@ -513,72 +482,6 @@ class Calculator extends JFrame implements ActionListener {
                 l1.setText("Reset Successful");
 
             }
-            //Check Button
-//        if( ae.getSource() == b19){
-//
-//
-//            String n2 = "";
-//            String n1 = "";
-//            if(!inp.equals(empty)){
-//                inp = t1.getText();
-//                char[] out = inp.toCharArray();
-//                int size = inp.length();
-//
-//                for(int i=0;i<size;i++){
-//                    if(out[i]=='+'||out[i]=='-'||out[i]=='*'||out[i]=='/'){
-//                        oprAt = i;//2
-//                    }
-//                }
-//                if(oprAt == 0){
-//                    n2 = null;
-//                    n1 = null;
-//                }
-//                if(n1 != null){
-//                char[] first = new char[oprAt];
-//                for(int i=0;i<oprAt;i++){
-//                    first[i] = out[i];
-//                }
-//                StringBuilder sb = new StringBuilder();
-//                for(int i=0;i<first.length;i++){
-//                    sb.append(first[i]);
-//                }
-//                n1 = sb.toString();
-//                }
-//
-//                if (size > oprAt) {
-//                    char[] second = new char[size - oprAt - 1];//5-2-1=2
-//                    int j=0;
-//
-//                    for (int i = oprAt + 1; i < size; i++) {
-//                        second[j++] = out[i];
-//                    }
-//                    //n2 = Arrays.toString(second);
-//                    StringBuilder sb = new StringBuilder();
-//                    for(int i=0;i<second.length;i++){
-//                        sb.append(second[i]);
-//                    }
-//                    n2 = sb.toString();
-//
-//                }
-//
-//                if(n1!=null && n2 == null){
-//                    l1.setText("Num1 : "+n1+", "+"Num2 : null");
-//                }
-//
-//                else if(n1!=null && n2!=null){
-//                    l1.setText("Num1: "+n1+", Num2: "+n2);
-//                }
-//                else{
-//                    l1.setText("No value assigned");
-//                }
-//
-//                }
-//
-//
-//                // n1 = Arrays.toString(first);
-//
-//
-//        }
         }
     }
 
@@ -587,5 +490,5 @@ class Calculator extends JFrame implements ActionListener {
 public class Swings1 {
     public static void main(String[] args){
         new Calculator();
-    }
-}
+    }// end of main method()
+}// end of Swing1 class
