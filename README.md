@@ -19,5 +19,4 @@ Functioning of this Calculator App:
 
 8. Reset Function: The reset button performs a complete system reset, clearing the input string, all internal variables, and counters within the calculator class, effectively creating a clean slate for a new calculation.
 
-9. Screenshot of Calculator App
 ![Calculator App Pic](https://github.com/empereurns/CalculatorInJavaSwing/assets/78228291/9d06c10a-358d-48dc-8598-fb6562894443)
